@@ -237,11 +237,11 @@
           </div>
 
           <div class="field-group">
-            <label>Normalize by live time</label>
-            <div class="checkbox-row">
-              <input type="checkbox" id="normalize_live_time" name="normalize_live_time" checked />
-              <label for="normalize_live_time">Normalize counts by live time</label>
-            </div>
+            <label for="normalize_live_time">Normalize by live time</label>
+            <select id="normalize_live_time" name="normalize_live_time">
+              <option value="false">Do not normalize</option>
+              <option value="true" selected>Normalize counts by live time</option>
+            </select>
           </div>
         </div>
 
