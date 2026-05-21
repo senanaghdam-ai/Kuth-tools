@@ -1,258 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>EDGE K / U / Th Portal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f5f5; /* light grey background */
-      color: #1b2a1b;
-    }
-    main {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 16px;
-    }
-    .card {
-      max-width: 880px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 32px 24px 28px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-    h1 {
-      font-size: 1.9rem;
-      margin: 0 0 6px;
-      color: #233321;
-    }
-    .subhead {
-      font-size: 0.95rem;
-      margin: 0 0 18px;
-      color: #555;
-    }
-    .brand-line {
-      font-size: 0.8rem;
-      color: #777;
-      margin-bottom: 14px;
-    }
-    .lead {
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-      color: #333;
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px 22px;
-      margin-bottom: 22px;
-      font-size: 0.86rem;
-    }
-    .step-number {
-      font-weight: 600;
-      color: #444;
-      margin-bottom: 2px;
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .form-section-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-      margin-top: 4px;
-    }
-    form {
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      padding-top: 18px;
-      margin-top: 4px;
-    }
-    .field-group {
-      margin-bottom: 14px;
-      text-align: left;
-    }
-    label {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-      color: #333;
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="file"],
-    input[type="number"],
-    input[type="email"] {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 9px 11px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 0.95rem;
-      background: #fafafa;
-    }
-    input[type="file"] {
-      padding: 6px 4px;
-      background: #f5f5f5;
-    }
-    .helper {
-      font-size: 0.78rem;
-      color: #666;
-      margin-top: 3px;
-    }
-    .settings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px 22px;
-    }
-    .checkbox-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.86rem;
-      color: #333;
-      margin-top: 4px;
-    }
-    .actions {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-    }
-    button[type="submit"] {
-      border: none;
-      cursor: pointer;
-      padding: 11px 26px;
-      border-radius: 999px;
-      background: #333;
-      color: #ffffff;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
-    }
-    button[type="submit"]:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
-      background: #111;
-    }
-    .footer-note {
-      font-size: 0.78rem;
-      color: #666;
-      margin-top: 12px;
-    }
-    @media (min-width: 920px) {
-      .card {
-        padding: 38px 36px 30px;
-      }
-      h1 {
-        font-size: 2.1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="card">
-      <h1>EDGE K / U / Th Portal</h1>
-      <p class="subhead">Gamma spectrometry processing — authorised access only</p>
-      <p class="brand-line">EDGE Geointelligence</p>
-
-      <p class="lead">
-        Process your K, U &amp; Th survey data. Upload your gamma spectrum files alongside the drone
-        dose-rate survey. The platform estimates potassium, uranium and thorium concentrations for every
-        measurement and returns a single joined CSV ready for further analysis.
-      </p>
-
-      <div class="steps">
-        <div>
-          <div class="step-number">1</div>
-          <div>Enter your access password — provided by EDGE Geointelligence.</div>
-        </div>
-        <div>
-          <div class="step-number">2</div>
-          <div>Upload spectrum files — one .spc file per measurement point.</div>
-        </div>
-        <div>
-          <div class="step-number">3</div>
-          <div>Upload dose-rate CSV — your drone survey table with measurement IDs, coordinates and elevation.</div>
-        </div>
-        <div>
-          <div class="step-number">4</div>
-          <div>Download result CSV — K%, U ppm, Th ppm and fit quality joined to your original survey table.</div>
-        </div>
-      </div>
-
-      <form action="https://pbot.edgeengineers.net/edge-kuth/upload-page"
-            method="POST"
-            enctype="multipart/form-data">
-        <div class="form-section-title">Upload &amp; run</div>
-
-        <div class="field-group">
-          <label for="project">Project / client name</label>
-          <input type="text" id="project" name="project" placeholder="e.g. Donegal Survey 2026" />
-        </div>
-
-        <div class="field-group">
-          <label for="email">Contact email</label>
-          <input type="email" id="email" name="email" placeholder="name@example.com" />
-          <div class="helper">Used to return your results and follow-up questions.</div>
-        </div>
-
-        <div class="field-group">
-          <label for="password">Access password</label>
-          <input type="password" id="password" name="password" placeholder="Enter access password" required />
-        </div>
-
-        <div class="field-group">
-          <label for="spectra">Spectrum files (.spc, one per measurement)</label>
-          <input type="file" id="spectra" name="spectra" accept=".spc" multiple required />
-          <div class="helper">Multiple files supported — one per measurement point.</div>
-        </div>
-
-        <div class="field-group">
-          <label for="dose_csv">Dose rate CSV (.csv)</label>
-          <input type="file" id="dose_csv" name="dose_csv" accept=".csv" required />
-          <div class="helper">Must contain a measurement ID column matching spectrum filenames.</div>
-        </div>
-
-        <div class="form-section-title">Settings</div>
-
-        <div class="settings-grid">
-          <div class="field-group">
-            <label for="roi_half_width">ROI half-width (keV)</label>
-            <input type="number" id="roi_half_width" name="roi_half_width" value="20" min="1" step="1" />
-          </div>
-
-          <div class="field-group">
-            <label for="measurement_id_column">Measurement ID column</label>
-            <input type="text" id="measurement_id_column" name="measurement_id_column" value="measurement_id" />
-          </div>
-
-          <div class="field-group">
-            <label for="normalize_live_time">Normalize by live time</label>
-            <select id="normalize_live_time" name="normalize_live_time">
-              <option value="false">Do not normalize</option>
-              <option value="true" selected>Normalize counts by live time</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="actions">
-          <button type="submit">Run processing</button>
-          <div class="footer-note">
-            Authorised clients only · EDGE Geointelligence
-          </div>
-        </div>
-      </form>
-    </section>
-  </main>
-</body>
-</html>
+2	<html lang="en">
+3	<head>
+4	  <meta charset="utf-8" />
+5	  <title>EDGE K / U / Th Portal</title>
+6	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+7	  <style>
+8	    body {
+9	      margin: 0;
+10	      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+11	      background: #f5f5f5;
+12	      color: #1b2a1b;
+13	    }
+14	    main {
+15	      min-height: 100vh;
+16	      display: flex;
+17	      align-items: center;
+18	      justify-content: center;
+19	      padding: 40px 16px;
+20	    }
+21	    .card {
+22	      max-width: 880px;
+23	      width: 100%;
+24	      background: #ffffff;
+25	      border-radius: 18px;
+26	      padding: 32px 24px 28px;
+27	      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+28	      border: 1px solid rgba(0, 0, 0, 0.06);
+29	    }
+30	    h1 {
+31	      font-size: 1.9rem;
+32	      margin: 0 0 6px;
+33	      color: #233321;
+34	    }
+35	    .subhead {
+36	      font-size: 0.95rem;
+37	      margin: 0 0 18px;
+38	      color: #555;
+39	    }
+40	    .brand-line {
+41	      font-size: 0.8rem;
+42	      color: #777;
+43	      margin-bottom: 14px;
+44	    }
+45	    .lead {
+46	      font-size: 0.95rem;
+47	      margin-bottom: 18px;
+48	      color: #333;
+49	    }
+50	    .steps {
+51	      display: grid;
+52	      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+53	      gap: 14px 22px;
+54	      margin-bottom: 22px;
+55	      font-size: 0.86rem;
+56	    }
+57	    .step-number {
+58	      font-weight: 600;
+59	      color: #444;
+60	      margin-bottom: 2px;
+61	      font-size: 0.8rem;
+62	      letter-spacing: 0.16em;
+63	      text-transform: uppercase;
+64	    }
+65	    .form-section-title {
+66	      font-weight: 600;
+67	      margin-bottom: 8px;
+68	      margin-top: 4px;
+69	    }
+70	    form {
+71	      border-top: 1px solid rgba(0, 0, 0, 0.08);
+72	      padding-top: 18px;
+73	      margin-top: 4px;
+74	    }
+75	    .field-group {
+76	      margin-bottom: 14px;
+77	      text-align: left;
+78	    }
+79	    label {
+80	      display: block;
+81	      font-size: 0.9rem;
+82	      margin-bottom: 6px;
+83	      color: #333;
+84	    }
+85	    input[type="text"],
+86	    input[type="password"],
+87	    input[type="file"],
+88	    input[type="number"],
+89	    input[type="email"],
+90	    select {
+91	      width: 100%;
+92	      box-sizing: border-box;
+93	      padding: 9px 11px;
+94	      border-radius: 8px;
+95	      border: 1px solid #ccc;
+96	      font-size: 0.95rem;
+97	      background: #fafafa;
+98	    }
+99	    select {
+100	      cursor: pointer;
+101	    }
+102	    input[type="file"] {
+103	      padding: 6px 4px;
+104	      background: #f5f5f5;
+105	    }
+106	    .helper {
+107	      font-size: 0.78rem;
+108	      color: #666;
+109	      margin-top: 3px;
+110	    }
+111	    .settings-grid {
+112	      display: grid;
+113	      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+114	      gap: 14px 22px;
+115	    }
+116	    .checkbox-group {
+117	      display: flex;
+118	      flex-direction: column;
+119	      gap: 10px;
+120	      padding-top: 4px;
+121	    }
+122	    .checkbox-row {
+123	      display: flex;
+124	      align-items: flex-start;
+125	      gap: 10px;
+126	      font-size: 0.86rem;
+127	      color: #333;
+128	    }
+129	    .checkbox-row input[type="checkbox"] {
+130	      margin-top: 3px;
+131	      flex-shrink: 0;
+132	    }
+133	    .checkbox-row label {
+134	      display: inline;
+135	      font-weight: 500;
+136	      margin-bottom: 0;
+137	      cursor: pointer;
+138	    }
+139	    .checkbox-desc {
+140	      font-size: 0.78rem;
+141	      color: #666;
+142	      margin-left: 26px;
+143	      margin-top: -4px;
+144	      margin-bottom: 6px;
+145	    }
+146	    .badge {
+147	      display: inline-block;
+148	      font-size: 0.7rem;
+149	      font-weight: 600;
+150	      letter-spacing: 0.06em;
+151	      text-transform: uppercase;
+152	      padding: 1px 8px;
+153	      border-radius: 4px;
+154	      margin-left: 6px;
+155	    }
+156	    .badge-default {
+157	      background: #e8e8e8;
+158	      color: #555;
+159	    }
+160	    .actions {
+161	      margin-top: 18px;
+162	      display: flex;
+163	      flex-wrap: wrap;
+164	      align-items: center;
+165	      gap: 12px;
+166	    }
+167	    button[type="submit"] {
+168	      border: none;
+169	      cursor: pointer;
+170	      padding: 11px 26px;
+171	      border-radius: 999px;
+172	      background: #333;
+173	      color: #ffffff;
+174	      font-weight: 600;
+175	      letter-spacing: 0.08em;
+176	      text-transform: uppercase;
+177	      font-size: 0.8rem;
+178	      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+179	      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+180	    }
+181	    button[type="submit"]:hover {
+182	      transform: translateY(-1px);
+183	      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+184	      background: #111;
+185	    }
+186	    .footer-note {
+187	      font-size: 0.78rem;
+188	      color: #666;
+189	      margin-top: 12px;
+190	    }
+191	    @media (min-width: 920px) {
+192	      .card {
+193	        padding: 38px 36px 30px;
+194	      }
+195	      h1 {
+196	        font-size: 2.1rem;
+197	      }
+198	    }
+199	  </style>
+200	</head>
+201	<body>
+202	  <main>
+203	    <section class="card">
+204	      <h1>EDGE K / U / Th Portal</h1>
+205	      <p class="subhead">Gamma spectrometry processing — authorised access only</p>
+206	      <p class="brand-line">EDGE Geointelligence</p>
+207	
+208	      <p class="lead">
+209	        Process your K, U &amp; Th survey data. Upload your gamma spectrum files alongside the drone
+210	        dose-rate survey. The platform estimates potassium, uranium and thorium concentrations for every
+211	        measurement and returns a single joined CSV ready for further analysis.
+212	      </p>
+213	
+214	      <div class="steps">
+215	        <div>
+216	          <div class="step-number">1</div>
+217	          <div>Enter your access password — provided by EDGE Geointelligence.</div>
+218	        </div>
+219	        <div>
+220	          <div class="step-number">2</div>
+221	          <div>Upload spectrum files — one .spc file per measurement point.</div>
+222	        </div>
+223	        <div>
+224	          <div class="step-number">3</div>
+225	          <div>Upload dose-rate CSV — your drone survey table with measurement IDs, coordinates and elevation.</div>
+226	        </div>
+227	        <div>
+228	          <div class="step-number">4</div>
+229	          <div>Download result CSV — K%, U ppm, Th ppm and fit quality joined to your original survey table.</div>
+230	        </div>
+231	      </div>
+232	
+233	      <form action="https://pbot.edgeengineers.net/edge-kuth/upload-page"
+234	            method="POST"
+235	            enctype="multipart/form-data">
+236	        <div class="form-section-title">Upload &amp; run</div>
+237	
+238	        <div class="field-group">
+239	          <label for="project">Project / client name</label>
+240	          <input type="text" id="project" name="project" placeholder="e.g. Donegal Survey 2026" />
+241	        </div>
+242	
+243	        <div class="field-group">
+244	          <label for="email">Contact email</label>
+245	          <input type="email" id="email" name="email" placeholder="name@example.com" />
+246	          <div class="helper">Used to return your results and follow-up questions.</div>
+247	        </div>
+248	
+249	        <div class="field-group">
+250	          <label for="password">Access password</label>
+251	          <input type="password" id="password" name="password" placeholder="Enter access password" required />
+252	        </div>
+253	
+254	        <div class="field-group">
+255	          <label for="spectra">Spectrum files (.spc, one per measurement)</label>
+256	          <input type="file" id="spectra" name="spectra" accept=".spc" multiple required />
+257	          <div class="helper">Multiple files supported — one per measurement point.</div>
+258	        </div>
+259	
+260	        <div class="field-group">
+261	          <label for="dose_csv">Dose rate CSV (.csv)</label>
+262	          <input type="file" id="dose_csv" name="dose_csv" accept=".csv" required />
+263	          <div class="helper">Must contain a measurement ID column matching spectrum filenames.</div>
+264	        </div>
+265	
+266	        <div class="form-section-title">Settings</div>
+267	
+268	        <div class="settings-grid">
+269	          <div class="field-group">
+270	            <label for="roi_half_width">ROI half-width (keV)</label>
+271	            <input type="number" id="roi_half_width" name="roi_half_width" value="20" min="1" step="1" />
+272	          </div>
+273	
+274	          <div class="field-group">
+275	            <label for="measurement_id_column">Measurement ID column</label>
+276	            <input type="text" id="measurement_id_column" name="measurement_id_column" value="measurement_id" />
+277	          </div>
+278	
+279	          <div class="field-group">
+280	            <label for="normalize_live_time">Normalize by live time <span class="badge badge-default">counts/s</span></label>
+281	            <select id="normalize_live_time" name="normalize_live_time">
+282	              <option value="false" selected>Do not normalize</option>
+283	              <option value="true">Divide counts by live time</option>
+284	            </select>
+285	            <div class="helper">Accounts for varying measurement durations between spectra.</div>
+286	          </div>
+287	
+288	          <div class="field-group">
+289	            <label for="normalize_total_counts">Normalize by total counts <span class="badge badge-default">100k</span></label>
+290	            <select id="normalize_total_counts" name="normalize_total_counts">
+291	              <option value="false" selected>Do not normalize</option>
+292	              <option value="true">Rescale to 100k total counts</option>
+293	            </select>
+294	            <div class="helper">Compares spectral shapes rather than absolute intensities. Recommended when sample counts differ from PAD calibration counts.</div>
+295	          </div>
+296	
+297	          <div class="field-group">
+298	            <label>Continuum subtraction <span class="badge badge-default">shoulder</span></label>
+299	            <div class="checkbox-row">
+300	              <input type="checkbox" id="subtract_continuum" name="subtract_continuum" value="true" />
+301	              <label for="subtract_continuum">Subtract continuum background</label>
+302	            </div>
+303	            <div class="helper">Estimates and subtracts linear continuum from each ROI using shoulder windows. Recommended for field survey data.</div>
+304	          </div>
+305	        </div>
+306	
+307	        <div class="actions">
+308	          <button type="submit">Run processing</button>
+309	          <div class="footer-note">
+310	            Authorised clients only · EDGE Geointelligence
+311	          </div>
+312	        </div>
+313	      </form>
+314	    </section>
+315	  </main>
+316	</body>
+317	</html>
