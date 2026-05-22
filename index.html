@@ -11,6 +11,7 @@
       background: #f5f5f5;
       color: #1b2a1b;
     }
+
     main {
       min-height: 100vh;
       display: flex;
@@ -18,6 +19,7 @@
       justify-content: center;
       padding: 40px 16px;
     }
+
     .card {
       max-width: 880px;
       width: 100%;
@@ -27,26 +29,31 @@
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
       border: 1px solid rgba(0, 0, 0, 0.06);
     }
+
     h1 {
       font-size: 1.9rem;
       margin: 0 0 6px;
       color: #233321;
     }
+
     .subhead {
       font-size: 0.95rem;
       margin: 0 0 18px;
       color: #555;
     }
+
     .brand-line {
       font-size: 0.8rem;
       color: #777;
       margin-bottom: 14px;
     }
+
     .lead {
       font-size: 0.95rem;
       margin-bottom: 18px;
       color: #333;
     }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -54,6 +61,7 @@
       margin-bottom: 22px;
       font-size: 0.86rem;
     }
+
     .step-number {
       font-weight: 600;
       color: #444;
@@ -62,26 +70,31 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
+
     .form-section-title {
       font-weight: 600;
       margin-bottom: 8px;
       margin-top: 4px;
     }
+
     form {
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       padding-top: 18px;
       margin-top: 4px;
     }
+
     .field-group {
       margin-bottom: 14px;
       text-align: left;
     }
+
     label {
       display: block;
       font-size: 0.9rem;
       margin-bottom: 6px;
       color: #333;
     }
+
     input[type="text"],
     input[type="password"],
     input[type="file"],
@@ -96,29 +109,35 @@
       font-size: 0.95rem;
       background: #fafafa;
     }
+
     select {
       cursor: pointer;
     }
+
     input[type="file"] {
       padding: 6px 4px;
       background: #f5f5f5;
     }
+
     .helper {
       font-size: 0.78rem;
       color: #666;
       margin-top: 3px;
     }
+
     .settings-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 14px 22px;
     }
+
     .checkbox-group {
       display: flex;
       flex-direction: column;
       gap: 10px;
       padding-top: 4px;
     }
+
     .checkbox-row {
       display: flex;
       align-items: flex-start;
@@ -126,16 +145,19 @@
       font-size: 0.86rem;
       color: #333;
     }
+
     .checkbox-row input[type="checkbox"] {
       margin-top: 3px;
       flex-shrink: 0;
     }
+
     .checkbox-row label {
       display: inline;
       font-weight: 500;
       margin-bottom: 0;
       cursor: pointer;
     }
+
     .checkbox-desc {
       font-size: 0.78rem;
       color: #666;
@@ -143,6 +165,7 @@
       margin-top: -4px;
       margin-bottom: 6px;
     }
+
     .badge {
       display: inline-block;
       font-size: 0.7rem;
@@ -153,10 +176,12 @@
       border-radius: 4px;
       margin-left: 6px;
     }
+
     .badge-default {
       background: #e8e8e8;
       color: #555;
     }
+
     .actions {
       margin-top: 18px;
       display: flex;
@@ -164,6 +189,7 @@
       align-items: center;
       gap: 12px;
     }
+
     button[type="submit"] {
       border: none;
       cursor: pointer;
@@ -178,20 +204,24 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
       transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
     }
+
     button[type="submit"]:hover {
       transform: translateY(-1px);
       box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
       background: #111;
     }
+
     .footer-note {
       font-size: 0.78rem;
       color: #666;
       margin-top: 12px;
     }
+
     @media (min-width: 920px) {
       .card {
         padding: 38px 36px 30px;
       }
+
       h1 {
         font-size: 2.1rem;
       }
@@ -230,9 +260,11 @@
         </div>
       </div>
 
-      <form action="https://pbot.edgeengineers.net/edge-kuth/upload-page"
-            method="POST"
-            enctype="multipart/form-data">
+      <form
+        action="https://pbot.edgeengineers.net/edge-kuth/upload-page"
+        method="POST"
+        enctype="multipart/form-data"
+      >
         <div class="form-section-title">Upload &amp; run</div>
 
         <div class="field-group">
@@ -252,66 +284,4 @@
         </div>
 
         <div class="field-group">
-          <label for="spectra">Spectrum files (.spc, one per measurement)</label>
-          <input type="file" id="spectra" name="spectra" accept=".spc" multiple required />
-          <div class="helper">Multiple files supported — one per measurement point.</div>
-        </div>
-
-        <div class="field-group">
-          <label for="dose_csv">Dose rate CSV (.csv)</label>
-          <input type="file" id="dose_csv" name="dose_csv" accept=".csv" required />
-          <div class="helper">Must contain a measurement ID column matching spectrum filenames.</div>
-        </div>
-
-        <div class="form-section-title">Settings</div>
-
-        <div class="settings-grid">
-          <div class="field-group">
-            <label for="roi_half_width">ROI half-width (keV)</label>
-            <input type="number" id="roi_half_width" name="roi_half_width" value="20" min="1" step="1" />
-          </div>
-
-          <div class="field-group">
-            <label for="measurement_id_column">Measurement ID column</label>
-            <input type="text" id="measurement_id_column" name="measurement_id_column" value="measurement_id" />
-          </div>
-
-          <div class="field-group">
-            <label for="normalize_live_time">Normalize by live time <span class="badge badge-default">counts/s</span></label>
-            <select id="normalize_live_time" name="normalize_live_time">
-              <option value="false" selected>Do not normalize</option>
-              <option value="true">Divide counts by live time</option>
-            </select>
-            <div class="helper">Accounts for varying measurement durations between spectra.</div>
-          </div>
-
-          <div class="field-group">
-            <label for="normalize_total_counts">Normalize by total counts <span class="badge badge-default">100k</span></label>
-            <select id="normalize_total_counts" name="normalize_total_counts">
-              <option value="false" selected>Do not normalize</option>
-              <option value="true">Rescale to 100k total counts</option>
-            </select>
-            <div class="helper">Compares spectral shapes rather than absolute intensities. Recommended when sample counts differ from PAD calibration counts.</div>
-          </div>
-
-          <div class="field-group">
-            <label>Continuum subtraction <span class="badge badge-default">shoulder</span></label>
-            <div class="checkbox-row">
-              <input type="checkbox" id="subtract_continuum" name="subtract_continuum" value="true" />
-              <label for="subtract_continuum">Subtract continuum background</label>
-            </div>
-            <div class="helper">Estimates and subtracts linear continuum from each ROI using shoulder windows. Recommended for field survey data.</div>
-          </div>
-        </div>
-
-        <div class="actions">
-          <button type="submit">Run processing</button>
-          <div class="footer-note">
-            Authorised clients only · EDGE Geointelligence
-          </div>
-        </div>
-      </form>
-    </section>
-  </main>
-</body>
-</html>
+          <label for="spectra">Spectrum files 
